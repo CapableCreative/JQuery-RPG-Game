@@ -1,9 +1,7 @@
-
-
 #background {
     background: #000;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .row.fighters {
@@ -25,17 +23,32 @@
     }
 
 .player, .opponent {
-    border: 3px solid #FFF;
-    border-radius: 10px;
+    border-top: 10px solid #FFF;
+    border-bottom: 10px solid #FFF;
     padding: 20px;
     box-sizing: border-box;
-    height: 50vh;
-}
+    height: 320px;
+    }
+    .player {
+        border-radius: 20px 0px 0px 20px;
+    }
+    .opponent{
+        border-radius: 0px 20px 20px 0px;
+        border-left: 10px solid #FFF;
+    }
 #roster-1 {
     margin: 20px 0px;
-    transition: all 1s ease .25s;
-    height: 40vh;
+    transition: all .5s ease .125s;
+    height: 305px;
     opacity: 1.0;
+}
+#roster-2 {
+    position: relative;
+    top: 175px;
+    margin: 20px 0px;
+    transition: all .5s ease .125s;
+    height: 305px;
+    opacity: 0.0;
 }
 
 .caseyPlay {
@@ -55,11 +68,60 @@
     background-size: cover;
 }
 
-#playerArena div {
+.Arena div {
     font-size: 48px;
     color: #FFF;
     text-shadow: 0px 0px 20px #000;
     font-weight: 500;
     text-align: center;
-    font-family: 'Sigmar One';
-}
+    font-family: 'Sigmar One';  
+    }
+    .Arena div ul {
+        position: relative;
+        list-style: none;
+        display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        }
+        .Arena div ul li:first-child {
+            flex-basis: 100%;
+            position: relative;
+            top: -90px;
+            letter-spacing: -5px;
+            font-size: 70px;
+            text-align: center;
+            transform: skewY(-3deg);
+        }
+    .Arena div ul li:nth-child(2), .Arena div ul li:nth-child(3) {
+        font-family: 'Oswald', 'Bebas Neue', 'Impact', Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        justify-content: space-evenly;
+        line-height: 70px;
+        padding: 10px 30px;
+        border: 3px solid #FFF;
+        position: relative;
+        top: 124px;
+        flex-basis: 50%;
+        }
+        .Arena div ul li:nth-child(2) {
+            background: #e21e2d;
+            border-radius: 250px 0px 0px 250px; 
+        }
+        .Arena div ul li:nth-child(3) {
+            background: #069;
+            border-radius: 0px 250px 250px 0px;
+        }
+
+        h2.instructions {
+            font-family: 'Oswald','Bebas Neue','Impact', Arial, Helvetica, sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            transform: skewX(-7deg);
+            text-align: center;
+            color: #e21e2d;
+        }

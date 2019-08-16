@@ -4,11 +4,12 @@
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="assets/css/rpg.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Sigmar+One&display=swap" rel="stylesheet">  
     </head>
     <body>
         <section id="background" class="container">
-            <div id="roster-1" class="row fighters">
+            <section id="roster-1" class="row fighters">
+                <div class="col-md-12"><h2 class="instructions">CHOOSE YOUR COMBATANT</h2></div>
                 <div id="spacer-1" class="col-md-2"></div>
                 <div id="wolverine" class="col-md-2 fighter">
                     <img alt="The Wildman Wolverine" src="assets/img/wolvie.png" class="img-responsive wolv"/>
@@ -23,17 +24,38 @@
                     <img alt="The Crazy-eyed Casey Jones" src="assets/img/spidy.png" class="img-responsive spid"/>
                 </div>
                 <div id="spacer-2" class="col-md-2"></div>
-            </div>
+            </section>
             <section id="arena" class="combatants container">
                 <div class="row">
-                    <div id="playerArena" class="col-md-6 player">
-                    
-                    </div>
-                    <div id="opponentArena" class="col-md-6 opponent case-play">
+                    <div id="playerArena" class="col-md-6 player Arena">
+                        <div id="playerStats">
 
+                        </div>
+                    </div>
+                    <div id="opponentArena" class="col-md-6 opponent Arena case-play">
+                        <div id="opponentStats">
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section id="roster-2" class="row fighters">
+                <div class="col-md-12"><h2 class="instructions">CHOOSE YOUR OPPONENT</h2></div>
+                <div id="spacer-1" class="col-md-2"></div>
+                <div id="wolverineOpp" class="col-md-2 fighter">
+                    <img alt="The Wildman Wolverine" src="assets/img/wolvie.png" class="img-responsive wolv"/>
+                </div>
+                <div id="caseyJonesOpp" class="col-md-2 fighter">
+                    <img alt="The Crazy-eyed Casey Jones" src="assets/img/casey.png" class="img-responsive case"/>
+                </div>
+                <div id="raphaelOpp" class="col-md-2 fighter">
+                    <img alt="The Wildman Wolverine" src="assets/img/raphy.png" class="img-responsive raph"/>
+                </div>
+                <div id="spiderManOpp" class="col-md-2 fighter">
+                    <img alt="The Crazy-eyed Casey Jones" src="assets/img/spidy.png" class="img-responsive spid"/>
+                </div>
+                <div id="spacer-2" class="col-md-2"></div>
+            </section>
         </section>
         <script
 			  src="https://code.jquery.com/jquery-3.4.1.slim.js"
