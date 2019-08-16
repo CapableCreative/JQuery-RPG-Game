@@ -1,0 +1,65 @@
+
+
+#background {
+    background: #000;
+    width: 100%;
+    height: 100vh;
+}
+
+.row.fighters {
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+.fighter img {
+    border-radius: 200px;
+    border: 3px solid #FFF;
+    transition: all .2s ease .125s;
+    }
+    .fighter img:hover {
+    margin-top: -20px;
+    }
+
+.player, .opponent {
+    border: 3px solid #FFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 50vh;
+}
+#roster-1 {
+    margin: 20px 0px;
+    transition: all 1s ease .25s;
+    height: 40vh;
+    opacity: 1.0;
+}
+
+.caseyPlay {
+    background: url(../img/casey.png) center center;
+    background-size: cover;
+}
+.wolvyPlay {
+    background: url(../img/wolvie.png) center center;
+    background-size: cover;
+}
+.spidyPlay {
+    background: url(../img/spidy.png) center center;
+    background-size: cover;
+}
+.raphyPlay {
+    background: url(../img/raphy.png) center center;
+    background-size: cover;
+}
+
+#playerArena div {
+    font-size: 48px;
+    color: #FFF;
+    text-shadow: 0px 0px 20px #000;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Sigmar One';
+}
