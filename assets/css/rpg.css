@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 #background {
     background: #000;
     width: 100%;
@@ -20,7 +23,8 @@
     transition: all .2s ease .125s;
     }
     .fighter img:hover {
-    margin-top: -20px;
+    border: 7px #e21e2d solid;
+    transform: scale(1.2);
     }
 
 .player, .opponent {
@@ -125,9 +129,12 @@
             transform: skewX(-7deg);
             text-align: center;
             color: #e21e2d;
+            padding-bottom: 20px;
         }
         #attackButton {
             display: none;
+            margin: 40px;
+            opacity: 0.0;
         }
         .button {
             width: calc(100% - 80px);
@@ -137,16 +144,17 @@
             color: #FFF;
             text-align: center;
             font-size: 8rem;
-            display: none;
-            margin: 40px;
-            opacity: 0.0;
             cursor: pointer;
         }
-
 #damage {
+    left: 60%;
+}
+#counterDamage {
+    left: 0%;
+}
+#damage, #counterDamage {
     position: absolute;
     background: url(../img/damage-bubble.png) center center no-repeat;
-    left: 30%;
     z-index: 10;
     top: 70px;
     height: 400px;
@@ -154,20 +162,60 @@
     padding-top: 80px;
     text-align: center;
     display: none;
-    opacity: 0.0;
-    transform: rotateY(20deg);
-    transform:scale(1.1);
-    transition: all .25s ease .025s;
+    transform:scale(0.0);
     box-sizing: border-box;
     }
-    #damage #damagePoints {
+    #damage #damagePoints, #counterDamage #counterDamagePoints {
         font-family: 'Sigmar One', 'Oswald', Arial, Helvetica, sans-serif;
         font-size: 8rem;
         color: #FFF;
     }
-    #damage #damageDeets {
+    #damage #damageDeets, #counterDamage #counterDamageDeets {
         font-family: 'Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
         color: #FFF;
         font-size: 6rem;
         transform: skewX(-15deg);
+    }
+
+    #victory {
+        height: 100vh;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        padding-top: 30vh;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+        transition: all 2s;
+        }
+        #victory h1 {
+            color:#e21e2d;
+            font-size: 20rem;
+            font-family: 'Sigmar One','Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
+            line-height: 18rem;
+        }
+        #victory h2 {
+            font-family: 'Oswald','Bebas Neue','Impact', Arial, Helvetica, sans-serif;
+            color: #FFF;
+            font-size: 6rem;
+            transform: skewX(-10deg);
+        }
+#onh div {
+    display: none;
+    }
+    #onh div:last-child {
+        display: block;
+        position: absolute;
+        z-index: 15;
+        right: 41%;
+        font-size: 34px;
+        top: 333px;
+        font-family: 'Sigmar One','Oswald','Impact', Arial, Helvetica, sans-serif;
+        transform: rotate(-9deg);
+        border-radius: 100px;
+        color: #FFF;
+        background: #900;
+        padding: 10px 30px;
+        border: 2px solid #FFF;
     }

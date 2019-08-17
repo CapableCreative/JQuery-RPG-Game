@@ -7,28 +7,31 @@ var playerAttack = [];
 var playerCounter = [];
 var playerHealth = [];
 var playerDiv = [];
+var playerMirror = [];
 
 var opponentName = [];
 var opponentAttack = [];
 var opponentHealth = [];
 var opponentCounter = [];
 var opponentDiv = [];
+var oppHealthCurr = [];
 
 var graveYard = [];
 
 $("#attackButton").click(function() {
     
     let playerStrike = Math.floor(Math.random(playerAttack[0]) * 100);
-    let currentOppHealth = opponentHealth[opponentHealth.length -1];
+    let currentOppHealth = opponentHealth[opponentHealth.length - 1];
+    oppHealthCurr.push(currentOppHealth);
     opponentHealth.push(currentOppHealth - playerStrike);
-    
+
     $( "#damagePoints" ).text(playerStrike); 
     $( "#damageDeets").text("DAMAGE!")
+    $("#onh").append('<div>');
+    $("#onh div").text(oppHealthCurr[oppHealthCurr.length - 1])
     document.getElementById("damage").style.display = "block";
-    document.getElementById("damage").style.opacity = "1.0";
-    document.getElementById("damage").style.tranform = "rotateY(0deg)";
     document.getElementById("damage").style.transform = "scale(1.0)";
-    setInterval(function(){document.getElementById("damage").style.transform = "scale(0.0)"},2000);
+    setInterval(function(){document.getElementById("damage").style.display = "none"},2000);
 
     if (currentOppHealth <= 0) {
         document.getElementById("roster-2").style.height = "200px";
@@ -36,10 +39,13 @@ $("#attackButton").click(function() {
         document.getElementById("attackButton").style.display = "none";
         document.getElementById("attackButton").style.opacity = "0.0";
         $( "#opponentStats li" ).remove();
+        $( "#onh div" ).remove();
         var lost = graveYard[graveYard.length - 1];
         document.getElementById("" + lost + "").style.display = "none";
+        document.getElementById("opponentArena").style.opacity = "0.3";
         console.log(lost);
         if (graveYard.length > 3) {
+            document.getElementById("victory").style.display = "block";
             console.log("YOU WON, YOU PUTZ!!!!!!!")
         }
     }
@@ -158,6 +164,7 @@ function stats(w, x, y, z, a) {
     playerAttack.push(w.attack);
     playerHealth.push(w.health);
     playerCounter.push(w.counter);
+    playerDiv.push(w.div);
 
 }
 
@@ -194,6 +201,7 @@ function statsOpp(w, x, y, z, a) {
     document.getElementById("roster-2").style.opacity = "0.0"; 
     document.getElementById("attackButton").style.display = "block"; 
     document.getElementById("attackButton").style.opacity = "1.0";
+    document.getElementById("opponentArena").style.opacity = "1.0";
 
     opponentHealth.push(w.health);
     opponentName.push(w.name);
@@ -201,11 +209,9 @@ function statsOpp(w, x, y, z, a) {
     opponentCounter.push(w.counter);
 
     graveYard.push(w.div);
+    console.log(w.div);
 }
 function clearOpp() {}
-
-
-
 
 /* 
 --------- NON-CRITICAL ERRORS ----------------------------------
