@@ -2,11 +2,15 @@
 /*      Each player character needs to have name, health, counter,
         and attack properties
 */
+
+$( document ).ready(function() {
+
 var playerName = [];
 var playerAttack = [];
 var playerCounter = [];
 var playerHealth = [];
 var playerDiv = [];
+var playerHealthCurr = [];
 var playerMirror = [];
 
 var opponentName = [];
@@ -20,37 +24,53 @@ var graveYard = [];
 
 $("#attackButton").click(function() {
     
-    let playerStrike = Math.floor(Math.random(playerAttack[0]) * 100);
+    let playerStrike = Math.floor(Math.random() * ((playerAttack[playerAttack.length - 1]) +10)) * 1;
     let currentOppHealth = opponentHealth[opponentHealth.length - 1];
-    oppHealthCurr.push(currentOppHealth);
     opponentHealth.push(currentOppHealth - playerStrike);
+    oppHealthCurr.push(currentOppHealth);
+
+    let opponentStrike = Math.floor(Math.random() * ((opponentCounter[opponentCounter.length - 1]) +10)) * 1;
+    let currentPlayerHealth = playerHealth[playerHealth.length - 1];
+    opponentCounter.push(opponentStrike);
+    playerHealth.push(currentPlayerHealth - opponentStrike);
+    playerHealthCurr.push(currentPlayerHealth);
 
     $( "#damagePoints" ).text(playerStrike); 
-    $( "#damageDeets").text("DAMAGE!")
+    $( "#damageDeets").text("DAMAGE!");
+    $( "#counterDamagePoints").text(opponentCounter[opponentCounter.length - 1]);
+    $( "#counterDamageDeets").text("COUNTER-ATTACK!");
     $("#onh").append('<div>');
-    $("#onh div").text(oppHealthCurr[oppHealthCurr.length - 1])
-    document.getElementById("damage").style.display = "block";
-    document.getElementById("damage").style.transform = "scale(1.0)";
-    setInterval(function(){document.getElementById("damage").style.display = "none"},2000);
+    $("#pnh").append('<div>');
+    $("#onh div").text(oppHealthCurr[oppHealthCurr.length - 1]);
+    $("#pnh div").text(playerHealthCurr[playerHealthCurr.length - 1]);
 
+    document.getElementById("damage").style.display = "block";
+    document.getElementById("counterDamage").style.display = "block";
+    document.getElementById("damage").style.transform = "scale(1.0)";
+    setInterval(function(){document.getElementById("counterDamage").style.transform = "scale(1.0)"},500);
+    setInterval(function(){document.getElementById("damage").style.display = "none"},2000);
+    setInterval(function(){document.getElementById("counterDamage").style.display = "none"},2000);
+
+    if (currentPlayerHealth <= 0) {
+        document.getElementById("defeated").style.display = "block";
+        console.log(currentPlayerHealth);
+    }
+    
     if (currentOppHealth <= 0) {
         document.getElementById("roster-2").style.height = "200px";
         document.getElementById("roster-2").style.opacity = "1.0"; 
         document.getElementById("attackButton").style.display = "none";
-        document.getElementById("attackButton").style.opacity = "0.0";
-        $( "#opponentStats li" ).remove();
+        document.getElementById("attackButton").style.opacity = "0.0"; 
         $( "#onh div" ).remove();
+        $( '#opponentArena ul').remove()
         var lost = graveYard[graveYard.length - 1];
         document.getElementById("" + lost + "").style.display = "none";
         document.getElementById("opponentArena").style.opacity = "0.3";
-        console.log(lost);
         if (graveYard.length > 3) {
             document.getElementById("victory").style.display = "block";
-            console.log("YOU WON, YOU PUTZ!!!!!!!")
         }
     }
 });
-
 
 
 const wolvy = {
@@ -63,14 +83,14 @@ const wolvy = {
 const casey = {
     name: "Casey Jones",
     health: 30,
-    counter: 30,
+    counter: 20,
     attack: 30,
     div: "caseyJonesOpp"
 }
 const spidy = {
-    name: "Spider-Man",
+    name: "Dragon",
     health: 90,
-    counter: 90,
+    counter: 45,
     attack: 60,
     div: "spiderManOpp"
 }
@@ -114,7 +134,6 @@ $("#caseyJonesOpp").click(function() {
 $("#raphaelOpp").click(function() {
     statsOpp(raphy,"wolvyPlay","caseyPlay","spidyPlay","raphyPlay");
 });
-
 
 /* ==================================
 --------- argument assignments ------
@@ -203,15 +222,18 @@ function statsOpp(w, x, y, z, a) {
     document.getElementById("attackButton").style.opacity = "1.0";
     document.getElementById("opponentArena").style.opacity = "1.0";
 
-    opponentHealth.push(w.health);
+    graveYard.push(w.div);
+
     opponentName.push(w.name);
     opponentAttack.push(w.attack);
+    opponentHealth.push(w.health);
     opponentCounter.push(w.counter);
+    opponentDiv.push(w.div);
 
-    graveYard.push(w.div);
-    console.log(w.div);
 }
 function clearOpp() {}
+
+});
 
 /* 
 --------- NON-CRITICAL ERRORS ----------------------------------
