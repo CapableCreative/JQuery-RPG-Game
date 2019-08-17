@@ -2,9 +2,10 @@
 <html lang="us-en">
     <head>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="assets/css/rpg.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/reset.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Sigmar+One&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Oswald|Sigmar+One&display=swap" rel="stylesheet">  
+        <link type="text/css" rel="stylesheet" href="assets/css/rpg.css" /> 
     </head>
     <body>
         <section id="background" class="container">
@@ -29,7 +30,6 @@
                 <div class="row">
                     <div id="playerArena" class="col-md-6 player Arena">
                         <div id="playerStats">
-
                         </div>
                     </div>
                     <div id="opponentArena" class="col-md-6 opponent Arena case-play">
@@ -55,6 +55,19 @@
                     <img alt="The Crazy-eyed Casey Jones" src="assets/img/spidy.png" class="img-responsive spid"/>
                 </div>
                 <div id="spacer-2" class="col-md-2"></div>
+            </section>
+            <section id="actions" class="buttons attack container">
+                    <div class="row">
+                        <div id="attackButton" class="button attack col-md-12">
+                            ATTACK
+                        </div>
+                    </div>
+                </section>
+            <section id="damage">
+                <div class="damageIndicator">
+                    <p id="damagePoints"></p>
+                    <p id="damageDeets"></p>
+                </div>
             </section>
         </section>
         <script

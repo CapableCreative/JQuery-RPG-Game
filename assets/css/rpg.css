@@ -3,7 +3,9 @@
     width: 100%;
     min-height: 100vh;
 }
-
+.row {
+    max-width: 1200px;
+}
 .row.fighters {
     display: flex;
     height: 40vh;
@@ -11,7 +13,6 @@
     align-content: center;
     flex-wrap: wrap;
 }
-
 
 .fighter img {
     border-radius: 200px;
@@ -37,7 +38,7 @@
         border-left: 10px solid #FFF;
     }
 #roster-1 {
-    margin: 20px 0px;
+    margin: 20px auto;
     transition: all .5s ease .125s;
     height: 305px;
     opacity: 1.0;
@@ -45,7 +46,7 @@
 #roster-2 {
     position: relative;
     top: 175px;
-    margin: 20px 0px;
+    margin: 20px auto;
     transition: all .5s ease .125s;
     height: 305px;
     opacity: 0.0;
@@ -125,3 +126,48 @@
             text-align: center;
             color: #e21e2d;
         }
+        #attackButton {
+            display: none;
+        }
+        .button {
+            width: calc(100% - 80px);
+            background: #e21e2d;
+            border-radius: 150px;
+            font-family: 'Sigmar One','Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
+            color: #FFF;
+            text-align: center;
+            font-size: 8rem;
+            display: none;
+            margin: 40px;
+            opacity: 0.0;
+            cursor: pointer;
+        }
+
+#damage {
+    position: absolute;
+    background: url(../img/damage-bubble.png) center center no-repeat;
+    left: 30%;
+    z-index: 10;
+    top: 70px;
+    height: 400px;
+    width: 700px;
+    padding-top: 80px;
+    text-align: center;
+    display: none;
+    opacity: 0.0;
+    transform: rotateY(20deg);
+    transform:scale(1.1);
+    transition: all .25s ease .025s;
+    box-sizing: border-box;
+    }
+    #damage #damagePoints {
+        font-family: 'Sigmar One', 'Oswald', Arial, Helvetica, sans-serif;
+        font-size: 8rem;
+        color: #FFF;
+    }
+    #damage #damageDeets {
+        font-family: 'Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
+        color: #FFF;
+        font-size: 6rem;
+        transform: skewX(-15deg);
+    }
