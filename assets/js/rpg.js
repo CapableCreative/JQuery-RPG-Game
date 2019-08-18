@@ -46,17 +46,10 @@ $("#attackButton").click(function() {
     $("#onh div").text(opponentHealth[opponentHealth.length - 1]);
     $("#pnh div").text(playerHealth[playerHealth.length - 1]);
 
-    document.getElementById("damage").style.display = "block";
-    document.getElementById("counterDamage").style.display = "block";
-    document.getElementById("damage").style.transform = "scale(1.0)";
-    setInterval(function(){document.getElementById("counterDamage").style.transform = "scale(1.0)"},500);
-    setInterval(function(){document.getElementById("damage").style.display = "none"},2000);
-    setInterval(function(){document.getElementById("counterDamage").style.display = "none"},2000);
-
-    if (currentPlayerHealth <= 0) {
+    if (playerHealth[playerHealth.length - 1] <= 0) {
         document.getElementById("defeated").style.display = "block";
     }
-    else if (currentOppHealth <= 0) {
+    else if (opponentHealth[opponentHealth.length - 1] <= 0) {
         document.getElementById("roster-2").style.height = "200px";
         document.getElementById("roster-2").style.opacity = "1.0"; 
         document.getElementById("attackButton").style.display = "none";
@@ -70,6 +63,15 @@ $("#attackButton").click(function() {
             document.getElementById("victory").style.display = "block";
         }
     }
+
+    document.getElementById("damage").style.display = "block";
+    document.getElementById("counterDamage").style.display = "block";
+    document.getElementById("damage").style.transform = "scale(1.0)";
+    setInterval(function(){document.getElementById("counterDamage").style.transform = "scale(1.0)"},500);
+    setInterval(function(){document.getElementById("damage").style.display = "none"},2000);
+    setInterval(function(){document.getElementById("counterDamage").style.display = "none"},2000);
+
+    
 });
 
 
