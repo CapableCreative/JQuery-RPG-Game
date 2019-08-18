@@ -72,8 +72,8 @@ $("#attackButton").click(function() {
 
 const wolvy = {
     name: "Wolverine",
-    health: 1288,
-    counter: 6,
+    health: 158,
+    counter: 16,
     attack: 76,
     div: "wolverineOpp"
 }
@@ -98,19 +98,17 @@ const raphy = {
     attack: 66,
     div: "raphaelOpp"
 }
+
 // -- PLAYER CHOICES ------------------ //
 $("#wolverine").click(function() {   
     stats(wolvy,"spidyPlay","caseyPlay","raphyPlay","wolvyPlay","\"wolverineOpp\"");
 });
-
 $("#caseyJones").click(function() {
     stats(casey,"spidyPlay","wolvyPlay","raphyPlay","caseyPlay","\"caseyJonesOpp\"");
- });
-
+});
  $("#spiderMan").click(function() {
     stats(spidy,"wolvyPlay","caseyPlay","raphyPlay","spidyPlay","\"spiderManOpp\"");
- });
-
+});
 $("#raphael").click(function() {
     stats(raphy,"wolvyPlay","caseyPlay","spidyPlay","raphyPlay","\"raphaelOpp\""); 
 });
@@ -119,15 +117,12 @@ $("#raphael").click(function() {
 $("#wolverineOpp").click(function() {   
     statsOpp(wolvy,"spidyPlay","caseyPlay","raphyPlay","wolvyPlay");
 });
-
 $("#caseyJonesOpp").click(function() {
     statsOpp(casey,"spidyPlay","wolvyPlay","raphyPlay","caseyPlay");
- });
-
- $("#spiderManOpp").click(function() {
+});
+$("#spiderManOpp").click(function() {
     statsOpp(spidy,"wolvyPlay","caseyPlay","raphyPlay","spidyPlay");
- });
-
+});
 $("#raphaelOpp").click(function() {
     statsOpp(raphy,"wolvyPlay","caseyPlay","spidyPlay","raphyPlay");
 });
@@ -139,7 +134,7 @@ x = first nonplayer character
 y = second nonplayer character
 z = third nonplayer character
 a = player profile image css class
-
+b stats() = correlating opponent div (so player doesn't play themselves) 
 ================================== */
 
 function stats(w, x, y, z, a, b) {
