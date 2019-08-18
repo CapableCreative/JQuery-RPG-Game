@@ -11,7 +11,6 @@ var playerCounter = [];
 var playerHealth = [];
 var playerDiv = [];
 var playerHealthCurr = [];
-var playerMirror = [];
 
 var opponentName = [];
 var opponentAttack = [];
@@ -53,10 +52,8 @@ $("#attackButton").click(function() {
 
     if (currentPlayerHealth <= 0) {
         document.getElementById("defeated").style.display = "block";
-        console.log(currentPlayerHealth);
     }
-    
-    if (currentOppHealth <= 0) {
+    else if (currentOppHealth <= 0) {
         document.getElementById("roster-2").style.height = "200px";
         document.getElementById("roster-2").style.opacity = "1.0"; 
         document.getElementById("attackButton").style.display = "none";
@@ -75,7 +72,7 @@ $("#attackButton").click(function() {
 
 const wolvy = {
     name: "Wolverine",
-    health: 128,
+    health: 1288,
     counter: 6,
     attack: 76,
     div: "wolverineOpp"
@@ -103,19 +100,19 @@ const raphy = {
 }
 // -- PLAYER CHOICES ------------------ //
 $("#wolverine").click(function() {   
-    stats(wolvy,"spidyPlay","caseyPlay","raphyPlay","wolvyPlay");
+    stats(wolvy,"spidyPlay","caseyPlay","raphyPlay","wolvyPlay","\"wolverineOpp\"");
 });
 
 $("#caseyJones").click(function() {
-    stats(casey,"spidyPlay","wolvyPlay","raphyPlay","caseyPlay");
+    stats(casey,"spidyPlay","wolvyPlay","raphyPlay","caseyPlay","\"caseyJonesOpp\"");
  });
 
  $("#spiderMan").click(function() {
-    stats(spidy,"wolvyPlay","caseyPlay","raphyPlay","spidyPlay");
+    stats(spidy,"wolvyPlay","caseyPlay","raphyPlay","spidyPlay","\"spiderManOpp\"");
  });
 
 $("#raphael").click(function() {
-    stats(raphy,"wolvyPlay","caseyPlay","spidyPlay","raphyPlay"); 
+    stats(raphy,"wolvyPlay","caseyPlay","spidyPlay","raphyPlay","\"raphaelOpp\""); 
 });
 
 // -- OPPONENT CHOICES -------------- //
@@ -145,10 +142,9 @@ a = player profile image css class
 
 ================================== */
 
-function stats(w, x, y, z, a) {
+function stats(w, x, y, z, a, b) {
     var element = document.getElementById('playerArena');
     element.classList.add(a);
-
     var statDiv = document.createElement('UL');
     var ulLi = document.createElement('LI');
     var ulLi2 = document.createElement('LI');
@@ -174,6 +170,7 @@ function stats(w, x, y, z, a) {
     else if (element.classList.contains(z)) {
     element.classList.remove(z);
     }
+
     document.getElementById("roster-1").style.height = "20px";
     document.getElementById("roster-1").style.opacity = "0.0"; 
     document.getElementById("roster-2").style.height = "0px";
@@ -184,6 +181,10 @@ function stats(w, x, y, z, a) {
     playerHealth.push(w.health);
     playerCounter.push(w.counter);
     playerDiv.push(w.div);
+
+    graveYard.push(w.div);
+    console.log(w.div);
+    document.getElementById(w.div).style.display = "none";
 
 }
 
@@ -231,7 +232,6 @@ function statsOpp(w, x, y, z, a) {
     opponentDiv.push(w.div);
 
 }
-function clearOpp() {}
 
 });
 
