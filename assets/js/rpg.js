@@ -25,11 +25,14 @@ $("#attackButton").click(function() {
     
     let playerStrike = Math.floor(Math.random() * ((playerAttack[playerAttack.length - 1]) +10)) * 1;
     let currentOppHealth = opponentHealth[opponentHealth.length - 1];
-    opponentHealth.push(currentOppHealth - playerStrike);
-    oppHealthCurr.push(currentOppHealth);
-
+    
     let opponentStrike = Math.floor(Math.random() * ((opponentCounter[opponentCounter.length - 1]) +10)) * 1;
     let currentPlayerHealth = playerHealth[playerHealth.length - 1];
+    
+    oppHealthCurr.push(currentOppHealth);
+    opponentHealth.push(currentOppHealth - playerStrike);
+
+    
     opponentCounter.push(opponentStrike);
     playerHealth.push(currentPlayerHealth - opponentStrike);
     playerHealthCurr.push(currentPlayerHealth);
@@ -40,8 +43,8 @@ $("#attackButton").click(function() {
     $( "#counterDamageDeets").text("COUNTER-ATTACK!");
     $("#onh").append('<div>');
     $("#pnh").append('<div>');
-    $("#onh div").text(oppHealthCurr[oppHealthCurr.length - 1]);
-    $("#pnh div").text(playerHealthCurr[playerHealthCurr.length - 1]);
+    $("#onh div").text(opponentHealth[opponentHealth.length - 1]);
+    $("#pnh div").text(playerHealth[playerHealth.length - 1]);
 
     document.getElementById("damage").style.display = "block";
     document.getElementById("counterDamage").style.display = "block";
@@ -73,14 +76,14 @@ $("#attackButton").click(function() {
 const wolvy = {
     name: "Wolverine",
     health: 158,
-    counter: 16,
+    counter: 26,
     attack: 76,
     div: "wolverineOpp"
 }
 const casey = {
     name: "Casey Jones",
     health: 30,
-    counter: 20,
+    counter: 40,
     attack: 30,
     div: "caseyJonesOpp"
 }
@@ -94,7 +97,7 @@ const spidy = {
 const raphy = {
     name: "Raphael",
     health: 136,
-    counter: 25,
+    counter: 55,
     attack: 66,
     div: "raphaelOpp"
 }
