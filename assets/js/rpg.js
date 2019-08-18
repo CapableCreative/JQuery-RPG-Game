@@ -82,27 +82,34 @@ const wolvy = {
     attack: 76,
     div: "wolverineOpp"
 }
+$("#wolverine .statlist").text("HEALTH: " + wolvy.health + " ATTACK: " + wolvy.attack + " COUNTER: " + wolvy.counter);
+
 const casey = {
     name: "Casey Jones",
     health: 30,
-    counter: 40,
+    counter: 30,
     attack: 30,
     div: "caseyJonesOpp"
 }
+$("#caseyJones .statlist").text("HEALTH: " + casey.health + " ATTACK: " + casey.attack + " COUNTER: " + casey.counter);
+
 const spidy = {
     name: "Dragon",
     health: 90,
-    counter: 45,
+    counter: 35,
     attack: 60,
     div: "spiderManOpp"
 }
+$("#spiderMan .statlist").text("HEALTH: " + spidy.health + " ATTACK: " + spidy.attack + " COUNTER: " + spidy.counter);
+
 const raphy = {
     name: "Raphael",
     health: 136,
-    counter: 55,
-    attack: 66,
+    counter: 45,
+    attack: 46,
     div: "raphaelOpp"
 }
+$("#raphael .statlist").text("HEALTH: " + raphy.health + " ATTACK: " + raphy.attack + " COUNTER: " + raphy.counter);
 
 // -- PLAYER CHOICES ------------------ //
 $("#wolverine").click(function() {   

@@ -278,3 +278,17 @@ body {
             padding: 10px 30px;
             border: 2px solid #FFF;
         }    
+        .statlist {
+            color: #FFF;
+            font-family:'Oswald','Bebas Neue','Impact',sans-serif;
+            text-align:center;
+            font-size: 1.1rem;
+            background: #000;
+            transform: skewX(-5deg);
+            transform: skewY(-5deg);
+            border: 1px solid #FFF;
+            box-sizing: border-box;
+            margin-top: -10px;
+            z-index: 12;
+            position:relative;
+          }
