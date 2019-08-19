@@ -21,18 +21,14 @@ var oppHealthCurr = [];
 
 var graveYard = [];
 
-$("#attackButton").click(function() {
-    
+$("#attackButton").click(function() {    
     let playerStrike = Math.floor(Math.random() * ((playerAttack[playerAttack.length - 1]) +10)) * 1;
     let currentOppHealth = opponentHealth[opponentHealth.length - 1];
-    
     let opponentStrike = Math.floor(Math.random() * ((opponentCounter[opponentCounter.length - 1]) +10)) * 1;
     let currentPlayerHealth = playerHealth[playerHealth.length - 1];
     
     oppHealthCurr.push(currentOppHealth);
     opponentHealth.push(currentOppHealth - playerStrike);
-
-    
     opponentCounter.push(opponentStrike);
     playerHealth.push(currentPlayerHealth - opponentStrike);
     playerHealthCurr.push(currentPlayerHealth);
@@ -40,7 +36,7 @@ $("#attackButton").click(function() {
     $( "#damagePoints" ).text(playerStrike); 
     $( "#damageDeets").text("DAMAGE!");
     $( "#counterDamagePoints").text(opponentCounter[opponentCounter.length - 1]);
-    $( "#counterDamageDeets").text("COUNTER-ATTACK!");
+    $( "#counterDamageDeets").text("COUNTER!");
     $("#onh").append('<div>');
     $("#pnh").append('<div>');
     $("#onh div").text(opponentHealth[opponentHealth.length - 1]);
@@ -63,17 +59,13 @@ $("#attackButton").click(function() {
             document.getElementById("victory").style.display = "block";
         }
     }
-
     document.getElementById("damage").style.display = "block";
     document.getElementById("counterDamage").style.display = "block";
     document.getElementById("damage").style.transform = "scale(1.0)";
     setInterval(function(){document.getElementById("counterDamage").style.transform = "scale(1.0)"},500);
-    setInterval(function(){document.getElementById("damage").style.display = "none"},2000);
-    setInterval(function(){document.getElementById("counterDamage").style.display = "none"},2000);
-
-    
+    setInterval(function(){document.getElementById("damage").style.display = "none"},3000);
+    setInterval(function(){document.getElementById("counterDamage").style.display = "none"},3000);   
 });
-
 
 const wolvy = {
     name: "Wolverine",
@@ -83,7 +75,6 @@ const wolvy = {
     div: "wolverineOpp"
 }
 $("#wolverine .statlist").text("HEALTH: " + wolvy.health + " ATTACK: " + wolvy.attack + " COUNTER: " + wolvy.counter);
-
 const casey = {
     name: "Casey Jones",
     health: 30,
@@ -92,7 +83,6 @@ const casey = {
     div: "caseyJonesOpp"
 }
 $("#caseyJones .statlist").text("HEALTH: " + casey.health + " ATTACK: " + casey.attack + " COUNTER: " + casey.counter);
-
 const spidy = {
     name: "Dragon",
     health: 90,
@@ -101,7 +91,6 @@ const spidy = {
     div: "spiderManOpp"
 }
 $("#spiderMan .statlist").text("HEALTH: " + spidy.health + " ATTACK: " + spidy.attack + " COUNTER: " + spidy.counter);
-
 const raphy = {
     name: "Raphael",
     health: 136,
@@ -177,22 +166,17 @@ function stats(w, x, y, z, a, b) {
     else if (element.classList.contains(z)) {
     element.classList.remove(z);
     }
-
     document.getElementById("roster-1").style.height = "20px";
     document.getElementById("roster-1").style.opacity = "0.0"; 
     document.getElementById("roster-2").style.height = "0px";
     document.getElementById("roster-2").style.opacity = "1.0";
-
     playerName.push(w.name);
     playerAttack.push(w.attack);
     playerHealth.push(w.health);
     playerCounter.push(w.counter);
     playerDiv.push(w.div);
-
     graveYard.push(w.div);
-    console.log(w.div);
     document.getElementById(w.div).style.display = "none";
-
 }
 
 function statsOpp(w, x, y, z, a) {
@@ -245,8 +229,8 @@ function statsOpp(w, x, y, z, a) {
 /* 
 --------- NON-CRITICAL ERRORS ----------------------------------
 
-    - REMOVE DIV WRAPPER AROUND LI ITEMS IN PLAYER STATS
-    - REMOVE REDUNDANT ELEMENTS FROM STATS & STATSOPP FUNCTIONS
+    - REMOVE DIV WRAPPER AROUND LI ITEMS IN PLAYER STATS - addressed! - SLF - 8/17/19
+    - REMOVE REDUNDANT ELEMENTS FROM STATS & STATSOPP FUNCTIONS - addressed! - SLF 8/17/19
 
 --------- SCRAPPED CODE ----------------------------------------
     // --- original player choice if-statement -- //

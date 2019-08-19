@@ -180,14 +180,17 @@ body {
     }
     #damage #damagePoints, #counterDamage #counterDamagePoints {
         font-family: 'Sigmar One', 'Oswald', Arial, Helvetica, sans-serif;
-        font-size: 6rem;
-        color: #FFF;
+        font-size: 12rem;
+        transform: rotate(-12deg);
+        line-height: 9rem;
+        color: #e21e2d;
     }
     #damage #damageDeets, #counterDamage #counterDamageDeets {
         font-family: 'Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
-        color: #FFF;
-        font-size: 5rem;
-        transform: skewX(-15deg);
+        color: #900;
+        line-height: 2.5rem;
+        font-size: 3rem;
+        transform: skewX(-15deg) rotate(-10deg);
     }
 
     #victory {
@@ -292,3 +295,22 @@ body {
             z-index: 12;
             position:relative;
           }
+#comicTitle, #scrapTitle {
+    letter-spacing: -5px;
+    position: absolute;
+    transform: skewY(10deg) rotate(-90deg);
+}
+#comicTitle {
+    color: #999;
+    font-size: 10rem;
+    left: -200px;
+    top: 40%;
+    font-family:'Sigmar One','Oswald','Bebas Neue','Impact',sans-serif;
+}
+#scrapTitle{
+    color: #333;
+    font-size: 14rem;
+    right: -200px;
+    top: 35%;
+    font-family:'Oswald','Bebas Neue','Impact',sans-serif;
+}
