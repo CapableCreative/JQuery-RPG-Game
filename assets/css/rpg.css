@@ -159,17 +159,20 @@ body {
             padding: 5px 50px;
         }
 #damage {
-    left: 60%;
+    top: -100px;
+    left: -200px;
+    text-shadow: none;
 }
 #counterDamage {
-    left: 0%;
+    top: -100px;
+    right: -200px;
+    text-shadow: none;
 }
 #damage, #counterDamage {
     position: absolute;
     background: url(../img/damage-bubble.png) center center no-repeat;
     background-size:contain;
     z-index: 10;
-    top: 70px;
     height: 300px;
     width: 500px;
     padding-top: 80px;
@@ -184,6 +187,7 @@ body {
         transform: rotate(-12deg);
         line-height: 9rem;
         color: #e21e2d;
+        text-shadow: none;
     }
     #damage #damageDeets, #counterDamage #counterDamageDeets {
         font-family: 'Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
@@ -191,6 +195,7 @@ body {
         line-height: 2.5rem;
         font-size: 3rem;
         transform: skewX(-15deg) rotate(-10deg);
+        text-shadow: none;
     }
 
     #victory {
@@ -208,7 +213,8 @@ body {
         }
         #victory h1 {
             color:#e21e2d;
-            font-size: 20rem;
+            font-size: 18rem;
+            letter-spacing: -5px;
             font-family: 'Sigmar One','Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
             line-height: 18rem;
         }
@@ -234,7 +240,8 @@ body {
             }
             #defeated h1 {
                 color:#e21e2d;
-                font-size: 20rem;
+                font-size: 18rem;
+                letter-spacing: -5px;
                 font-family: 'Sigmar One','Oswald','Bebas Neue', Arial, Helvetica, sans-serif;
                 line-height: 18rem;
             }
@@ -252,9 +259,9 @@ body {
         display: block;
         position: absolute;
         z-index: 15;
-        right: 35%;
+        right: 216px;
         font-size: 34px;
-        top: 326px;
+        top: -66px;
         font-family: 'Sigmar One','Oswald','Impact', Arial, Helvetica, sans-serif;
         transform: rotate(-9deg);
         border-radius: 100px;
@@ -270,9 +277,9 @@ body {
             display: block;
             position: absolute;
             z-index: 15;
-            left: 25%;
+            left: 132px;
             font-size: 34px;
-            top: 326px;
+            top: -66px;
             font-family: 'Sigmar One','Oswald','Impact', Arial, Helvetica, sans-serif;
             transform: rotate(-9deg);
             border-radius: 100px;
