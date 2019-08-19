@@ -6,29 +6,28 @@
         <link href="https://fonts.googleapis.com/css?family=Oswald|Sigmar+One&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="assets/css/rpg.css" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <section id="background" class="container">
+        <section id="background" class="container-fluid">
             <section id="roster-1" class="row fighters">
                 <div class="col-md-12"><h2 class="instructions">CHOOSE YOUR COMBATANT</h2></div>
-                <div id="spacer-1" class="col-md-2"></div>
-                <div id="wolverine" class="col-md-2 fighter">
+                <div id="wolverine" class="col-md-3 fighter">
                     <img alt="The Wildman Wolverine" src="assets/img/wolvie.png" class="img-responsive wolv"/>
                     <p class="statlist"></p>
                 </div>
-                <div id="caseyJones" class="col-md-2 fighter">
+                <div id="caseyJones" class="col-md-3 fighter">
                     <img alt="The Crazy-eyed Casey Jones" src="assets/img/casey.png" class="img-responsive case"/>
                     <p class="statlist"></p>
                 </div>
-                <div id="raphael" class="col-md-2 fighter">
+                <div id="raphael" class="col-md-3 fighter">
                     <img alt="The Wildman Wolverine" src="assets/img/raphy.png" class="img-responsive raph"/>
                     <p class="statlist"></p>
                 </div>
-                <div id="spiderMan" class="col-md-2 fighter">
+                <div id="spiderMan" class="col-md-3 fighter">
                     <img alt="The Crazy-eyed Casey Jones" src="assets/img/spidy.png" class="img-responsive spid"/>
                     <p class="statlist"></p>
                 </div>
-                <div id="spacer-2" class="col-md-2"></div>
             </section>
             <section id="arena" class="combatants container">
                 <div class="row">
@@ -46,20 +45,18 @@
             </section>
             <section id="roster-2" class="row fighters">
                 <div class="col-md-12"><h2 class="instructions" style="color:#FFF;">CHOOSE YOUR NEXT OPPONENT</h2></div>
-                <div id="spacer-1" class="col-md-2"></div>
-                <div id="wolverineOpp" class="col-md-2 fighter wolvOpp">
+                <div id="wolverineOpp" class="col-md-3 fighter wolvOpp">
                     <img alt="The Wildman Wolverine" src="assets/img/wolvie.png" class="img-responsive wolv"/>
                 </div>
-                <div id="caseyJonesOpp" class="col-md-2 fighter caseOpp">
+                <div id="caseyJonesOpp" class="col-md-3 fighter caseOpp">
                     <img alt="The Crazy-eyed Casey Jones" src="assets/img/casey.png" class="img-responsive case"/>
                 </div>
-                <div id="raphaelOpp" class="col-md-2 fighter raphOpp">
+                <div id="raphaelOpp" class="col-md-3 fighter raphOpp">
                     <img alt="The Wildman Wolverine" src="assets/img/raphy.png" class="img-responsive raph"/>
                 </div>
-                <div id="spiderManOpp" class="col-md-2 fighter spidOpp">
+                <div id="spiderManOpp" class="col-md-3 fighter spidOpp">
                     <img alt="The Crazy-eyed Casey Jones" src="assets/img/spidy.png" class="img-responsive spid"/>
                 </div>
-                <div id="spacer-2" class="col-md-2"></div>
             </section>
             <section id="actions" class="buttons attack container">
                     <div class="row">
@@ -81,13 +78,15 @@
                 </div>
             </section>
         </section>
-        <section id="victory">
-            <h1>VICTORY</h1>
-            <h2>YOUR ENEMIES COWER IN YOUR PRESENCE.</h2>
-            <br>
-            <button class="btn btn-primary"><a href="javascript:window.location.href=window.location.href">PLAY AGAIN</a></button>
+        <section id="victory" class="container-fluid">
+            <div class="">
+                <h1>VICTORY</h1>
+                <h2>YOUR ENEMIES COWER IN YOUR PRESENCE.</h2>
+                <br>
+                <button class="btn btn-primary"><a href="javascript:window.location.href=window.location.href">PLAY AGAIN</a></button>
+            </div>
         </section>
-        <section id="defeated">
+        <section id="defeated" class="container-fluid">
             <h1>DEFEAT</h1>
             <h2>YOUR CHILDREN HANG THEIR HEADS IN ETERNAL SHAME.</h2>
             <br>

@@ -7,8 +7,8 @@ body {
     width: 100%;
     min-height: 100vh;
 }
-.row {
-    max-width: 1200px;
+.row, .container {
+    max-width: 960px;
 }
 .row.fighters {
     display: flex;
@@ -43,7 +43,7 @@ body {
         border-left: 10px solid #FFF;
     }
 #roster-1 {
-    margin: 20px auto;
+    margin: 20px auto 40px;
     transition: all .5s ease .125s;
     height: 305px;
     opacity: 1.0;
@@ -98,7 +98,7 @@ body {
             position: relative;
             top: -90px;
             letter-spacing: -5px;
-            font-size: 70px;
+            font-size: 62px;
             text-align: center;
             transform: skewY(-3deg);
         }
@@ -285,7 +285,7 @@ body {
             color: #FFF;
             font-family:'Oswald','Bebas Neue','Impact',sans-serif;
             text-align:center;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             background: #000;
             transform: skewX(-5deg);
             transform: skewY(-5deg);
@@ -308,9 +308,13 @@ body {
     font-family:'Sigmar One','Oswald','Bebas Neue','Impact',sans-serif;
 }
 #scrapTitle{
-    color: #333;
+    color: #999;
     font-size: 14rem;
     right: -200px;
     top: 35%;
     font-family:'Oswald','Bebas Neue','Impact',sans-serif;
+}
+
+@media (max-width: 1160px) {
+    #scrapTitle, #comicTitle {display: none;}
 }
