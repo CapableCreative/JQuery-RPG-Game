@@ -44,6 +44,7 @@ $("#attackButton").click(function() {
 
     if (playerHealth[playerHealth.length - 1] <= 0) {
         document.getElementById("defeated").style.display = "block";
+        document.getElementsByClassName("instructions").style.display = "none";
     }
     else if (opponentHealth[opponentHealth.length - 1] <= 0) {
         document.getElementById("roster-2").style.height = "200px";
@@ -57,6 +58,7 @@ $("#attackButton").click(function() {
         document.getElementById("opponentArena").style.opacity = "0.3";
         if (graveYard.length > 3) {
             document.getElementById("victory").style.display = "block";
+            document.getElementsByClassName("instructions").style.display = "none";
         }
     }
     document.getElementById("damage").style.display = "block";
