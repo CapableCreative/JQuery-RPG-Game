@@ -1,5 +1,5 @@
 body {
-    overflow: hidden;
+    background: #000;
 }
 #background {
     background: url(../img/battleBkgrd.jpg) no-repeat #000;
